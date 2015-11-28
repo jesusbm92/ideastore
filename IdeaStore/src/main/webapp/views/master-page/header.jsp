@@ -14,7 +14,9 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 <div>
-	<img src="images/logo.png" alt="Idea Store" />
+	<img src="images/logoidea.jpg" alt="Idea Store" /><br/>
+	Uplifting your ideas to the next level!!!
+	<br/><br/>
 </div>
 
 <div>
