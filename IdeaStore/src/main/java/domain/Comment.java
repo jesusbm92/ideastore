@@ -23,6 +23,7 @@ public class Comment extends DomainEntity {
 
 	// RelationShip
 	private User user;
+	private Idea idea;
 
 	public Comment() {
 		super();
@@ -57,4 +58,15 @@ public class Comment extends DomainEntity {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	@Valid
+	@ManyToOne(optional = true)
+	public Idea getIdea() {
+		return idea;
+	}
+
+	public void setIdea(Idea idea) {
+		this.idea = idea;
+	}
+	
 }
