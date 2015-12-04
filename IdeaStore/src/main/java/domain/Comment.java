@@ -60,7 +60,7 @@ public class Comment extends DomainEntity {
 	}
 	
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	public Idea getIdea() {
 		return idea;
 	}
