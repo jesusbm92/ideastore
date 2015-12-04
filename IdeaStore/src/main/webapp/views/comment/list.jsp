@@ -14,16 +14,19 @@
 		requestURI="${requestURI}" id="row">
 		<display:column property="content" titleKey="comment.content"
 			sortable="true" />
-		<display:column property="comment.name" titleKey="comment.ideaName"
+		<display:column property="idea.name" titleKey="comment.name"
 			sortable="true" />
+			
 		<display:column property="user.name" titleKey="comment.user"
 			sortable="true" />
+		
 	</display:table>
+	
 	<a href="comment/create.do?ideaId=${idea.id}"><input type="button"
 		class="btn btn-default"
 		value="<spring:message code="comment.create"/>"
 		onclick="self.location.href = comment/create.do" /></a>
-		<!-- 
+<!-- 
 	<security:authorize access="hasRole('CUSTOMER')">
 		<a href="idea/customer/list.do"><input type="button"
 			class="btn btn-default"

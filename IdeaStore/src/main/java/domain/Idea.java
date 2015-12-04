@@ -1,8 +1,11 @@
 package domain;
 
+import java.util.Collection;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -13,6 +16,7 @@ public class Idea extends DomainEntity {
 	
 	private String name;
 	private String description;
+	private Collection<Comment> comments;
 	
 	
 	public Idea() {
@@ -44,5 +48,15 @@ public class Idea extends DomainEntity {
 	}
 	
 	
+	@Valid
+	@NotNull
+	@OneToMany(mappedBy = "idea")
+	public Collection<Comment> getComments() {
+		return comments;
+	}
 
+	public void setComments(Collection<Comment> comments) {
+		this.comments = comments;
+	}
+	
 }

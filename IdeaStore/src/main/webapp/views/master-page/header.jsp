@@ -13,10 +13,9 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
-<div>
-	<img src="images/logoidea.jpg" alt="Idea Store" /><br/>
-	Uplifting your ideas to the next level!!!
-	<br/><br/>
+<div id="head">
+	<img src="images/logoidea.png" alt="Idea Store" /><br/>
+	<p> Uplifting your ideas to the next level!!! </p>
 </div>
 
 <div>
@@ -43,7 +42,26 @@
 		</security:authorize>
 		
 		<security:authorize access="isAnonymous()">
-			<li><a class="fNiv" href="security/login.do"><spring:message code="master.page.login" /></a></li>
+			<li class="startSpace"> </li>	
+		
+			<li class="login-li"><a class="fNiv" href="security/login.do"><spring:message code="master.page.login" /></a></li>
+			<li class="sls"> <a href="#">/</a> </li>		
+			<li class="register-li"><a class="fNiv" href="security/register.do"><spring:message code="master.page.register" /></a></li>
+			
+			<li class="midSpace"> </li>		
+		
+			<li class="home"><a class="fNiv" href=""><spring:message code="master.page.home" /></a></li>
+			<li class="services"><a class="fNiv" href="#"><spring:message code="master.page.ourServices" /></a></li>
+			<li class="contact"><a class="fNiv" href="#"><spring:message code="master.page.contact" /></a></li>
+
+			<li class=midSpace2> </li>		
+
+			
+			<li class="engLang"><a class="fNiv" href="?language=en"></a></li>
+			<li class="esLang"><a class="fNiv" href="?language=es"></a></li>
+			
+			<li class="endSpace"> </li>	
+			
 		</security:authorize>
 		
 		<security:authorize access="isAuthenticated()">
@@ -63,8 +81,8 @@
 		</security:authorize>
 	</ul>
 </div>
-
+<!--  
 <div>
 	<a href="?language=en">en</a> | <a href="?language=es">es</a>
 </div>
-
+-->

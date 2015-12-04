@@ -21,13 +21,15 @@
 	<form:label path="username">
 		<spring:message code="security.username" />
 	</form:label>
+	<br />
 	<form:input path="username" />	
 	<form:errors class="error" path="username" />
-	<br />
+	<br /><br />
 
 	<form:label path="password">
 		<spring:message code="security.password" />
 	</form:label>
+	<br />
 	<form:password path="password" />	
 	<form:errors class="error" path="password" />
 	<br />
@@ -37,7 +39,7 @@
 			<spring:message code="security.login.failed" />
 		</div>
 	</jstl:if>
-	
-	<input type="submit" value="<spring:message code="security.login" />" />
+	<br />
+	<input class="loginbutton" type="submit" value="<spring:message code="security.login" />" />
 	
 </form:form>

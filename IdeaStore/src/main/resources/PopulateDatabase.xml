@@ -62,40 +62,61 @@
 	<bean id="idea1" class="domain.Idea">
 		<property name="name" value="Idea 1" />
 		<property name="description" value="This is the idea 1" />
+		<property name="comments">
+			<list><ref bean="comment1" /></list>
+		</property>
 	</bean>
 	
 	<bean id="idea2" class="domain.Idea">
 		<property name="name" value="Idea 2" />
 		<property name="description" value="This is the idea 2" />
+		<property name="comments">
+			<list></list>
+		</property>
 	</bean>
 	
 	<bean id="idea3" class="domain.Idea">
 		<property name="name" value="Idea 3" />
 		<property name="description" value="This is the idea 3" />
+		<property name="comments">
+			<list></list>
+		</property>
 	</bean>
 	
 	<bean id="idea4" class="domain.Idea">
 		<property name="name" value="Idea 4" />
 		<property name="description" value="This is the idea 4" />
+		<property name="comments">
+			<list></list>
+		</property>
 	</bean>
 	
 	<bean id="idea5" class="domain.Idea">
 		<property name="name" value="Idea 5" />
 		<property name="description" value="This is the idea 5" />
+		<property name="comments">
+			<list></list>
+		</property>
 	</bean>
 	
 	<bean id="idea6" class="domain.Idea">
-		<property name="name" value="Idea 6" />
 		<property name="description" value="This is the idea6" />
+		<property name="name" value="Idea 6" />
+		<property name="comments">
+			<list></list>
+		</property>
 	</bean>
 	
 	<bean id="idea7" class="domain.Idea">
 		<property name="name" value="Idea 7" />
 		<property name="description" value="This is the idea 7" />
+		<property name="comments">
+			<list></list>
+		</property>
+	</bean> 
+	<bean id="comment1" class="domain.Comment">
+		<property name="date" value="2014/03/28" />
+		<property name="content" value="Content Comment 1" />
+		<property name="idea" ref="idea1" />
 	</bean>
-	<bean id="comment1" class="domain.Idea">
-		<property name="content" value="this idea is best what I have heard"></property>
-		<property name="idea_id" value="7"></property>
-	</bean>
-
 </beans>

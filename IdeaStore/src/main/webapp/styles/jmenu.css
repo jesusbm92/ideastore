@@ -12,6 +12,7 @@
 	display: table;
 	margin: 0px;
 	padding: 0px;
+	width:100%;
 }
 
 /* First level */
@@ -27,12 +28,17 @@
 	display: block;
 	background-color: transparent;
 	color: white;
-	text-transform: uppercase;
 	cursor: pointer;
-	font-size: 12px;
+	font-size: 18px;
 	text-decoration: none;
+	text-align: center;
+	height: 35px;
+    vertical-align: middle;
+	font-weight: bold;
 }
-
+.jMenu li a:hover {
+	color: #514c52;
+}
 /* Lower levels */
 
 .jMenu li ul {
@@ -84,4 +90,46 @@
 	border-top: 1px solid #322f32;
 	border-bottom: 1px solid #322f32;
 	text-decoration: none;
+}
+
+
+/* More.. */
+
+.startSpace, .endSpace{width:35px;}
+
+
+
+.midSpace, .midSpace2 {width:115px}
+
+.login-li, .register-li {width: 50px;}
+
+.sls {width:5px;}
+
+.login-li a , .register-li a, .sls a  {
+	padding: 8px 3px;
+	font-style:italic;
+}
+
+.engLang, .esLang{width: 50px;} 
+
+.engLang a{
+	background-image:url("../images/ukflg.png");
+	background-size:40px 40px;
+	background-repeat:no-repeat;
+	background-position:center left;
+	height: 50px;
+	width:40px;
+	float:right;	
+	margin-bottom:-15px;
+}
+
+.esLang a{
+	background-image:url("../images/esflg.png");
+	background-size:40px 40px;
+	background-repeat:no-repeat;
+	background-position:center left;
+	height: 50px;
+	width:40px;
+	float:right;	
+	margin-bottom:-15px
 }

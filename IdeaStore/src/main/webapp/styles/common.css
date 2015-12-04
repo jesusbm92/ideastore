@@ -7,6 +7,57 @@
  * http://www.tdg-seville.info/License.html
  * 
  */
+ 
+body{
+	margin: 0;
+    padding: 0;
+	
+}
+
+#container {
+	width: 1080px;
+	margin: auto;
+	position: relative;
+	margin-top: 10px;
+}
+
+#head{
+	text-align: center;
+	background-color: #6ed673;
+	padding-top:12px;
+	padding-bottom:5px;
+	border:1px solid black;
+	border-radius: 20px 20px 0px 0px; 	
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 20px 20px 0px 0px;
+	
+}
+
+#head p {
+	font-family:Comic Sans, Comic Sans MS, cursive;
+	font-weight: bold;
+	color: #282c1d;
+	}
+
+#content{
+	border:1px solid black;
+	padding: 10px 40px 40px 50px;
+	background-color: #f9fdfc;
+	font-weight: bolder;	
+}
+
+
+#footer{
+	height:100px;
+	background-color: #6ed673;
+	padding-bottom:3px;
+	padding-left:30px;
+	padding-right:30px;
+	border:1px solid black;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px; 	
+}
 
 .error {
 	color: red;
@@ -16,4 +67,19 @@
 .message {
 	color: red;
 	font-weight: bolder;
+}
+
+
+.loginbutton{
+	text-align:center;
+	background-color: #322f32;
+	border:1px solid black;
+	border-radius: 20px; 	
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	padding:5px 25px 5px 25px;
+	font-weight: bold;	
+	color:#FFFFFF;
+	cursor:hand;
+	margin-left:20px;
 }

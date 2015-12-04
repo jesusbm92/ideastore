@@ -54,6 +54,7 @@
 		
 <!-- 		ADD HERE YOUR NEW URLS -->
 		<security:intercept-url pattern="/idea/**"	access="permitAll" />
+		<security:intercept-url pattern="/comment/**" access="permitAll" />
 	
 		<security:intercept-url pattern="/**" access="hasRole('NONE')" />
 
