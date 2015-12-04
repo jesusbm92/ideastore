@@ -23,7 +23,8 @@
 		<value>/views/profile/tiles.xml</value>
 		
 		<value>/views/idea/tiles.xml</value>
-		
+		<value>/views/comment/tiles.xml</value>
+
 	</util:list>
 
 </beans>

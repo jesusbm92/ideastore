@@ -93,5 +93,9 @@
 		<property name="name" value="Idea 7" />
 		<property name="description" value="This is the idea 7" />
 	</bean>
-	
+	<bean id="comment1" class="domain.Idea">
+		<property name="content" value="this idea is best what I have heard"></property>
+		<property name="idea_id" value="7"></property>
+	</bean>
+
 </beans>

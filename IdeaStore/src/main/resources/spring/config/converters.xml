@@ -23,7 +23,10 @@
 			<bean class="converters.Class1ToClass2" /> 
 		-->
 		<bean class="converters.IdeaToStringConverter" />
-		<bean class="converters.StringToIdeaConverter" />
+		<bean class="converters.StringToIdeaConverter" /><bean
+			class="converters.CommentToStringConverter">
+</bean>
+		<bean class="converters.StringToCommentConverter"></bean>
 	</util:list>
 	
 </beans>

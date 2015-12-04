@@ -15,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import services.CommentService;
 import domain.Comment;
+import services.IdeaService;
+import domain.Idea;
 
 @Controller
 @RequestMapping("/comment")
@@ -22,6 +24,9 @@ public class CommentController extends AbstractController {
 
 	@Autowired
 	private CommentService commentService;
+	
+	@Autowired
+	private IdeaService ideaService;	
 
 	// Constructors -----------------------------------------------------------
 
@@ -32,24 +37,25 @@ public class CommentController extends AbstractController {
 	// list ---------------------------------------------------------------
 
 	@RequestMapping("/list")
-	public ModelAndView list(@RequestParam int commentId) {
+	public ModelAndView list(@RequestParam int ideaId) {
 		ModelAndView result;
 
-		Collection<Comment> comments = commentService.findCommentByComment(commentId);
+		Collection<Comment> comments = commentService.findCommentByIdea(ideaId);
 
 		String uri = "comment/list";
 		String requestURI = "comment/list.do";
-		result = createListModelAndView(requestURI, comments, uri);
+		Idea idea = ideaService.findOne(ideaId);
+		result = createListModelAndView(requestURI, comments, uri,idea);
 		return result;
 	}
 
 	// Creation
 	// ------------------------------------------------------------------
 	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public ModelAndView create(@RequestParam int planId) {
+	public ModelAndView create(@RequestParam int ideaId) {
 		ModelAndView result;
 
-		Comment comment = commentService.create(planId);
+		Comment comment = commentService.create(ideaId);
 
 		result = createEditModelAndView(comment);
 		result.addObject("create", true);
@@ -106,11 +112,12 @@ public class CommentController extends AbstractController {
 	}
 
 	protected ModelAndView createListModelAndView(String requestURI,
-			Collection<Comment> comments, String uri) {
+			Collection<Comment> comments, String uri, Idea idea) {
 		ModelAndView result;
 
 		result = new ModelAndView(uri);
 		result.addObject("comments", comments);
+		result.addObject("idea", idea);
 		result.addObject("requestURI", requestURI);
 
 		return result;

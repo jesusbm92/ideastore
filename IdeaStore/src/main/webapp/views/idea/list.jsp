@@ -36,6 +36,12 @@
 				value="<spring:message code="idea.edit"/>"
 				onclick="self.location.href = idea/edit.do?ideaId=${row.id}" /></a>
 		</display:column>
+		<display:column>
+			<a href="comment/list.do?ideaId=${row.id}"><input
+				class="btn btn-default" type="button"
+				value="<spring:message code="comment.create"/>"
+				onclick="self.location.href = comment/list.do?ideaId=${row.id}" /></a>
+		</display:column>
 	</display:table>
 	<a href="day/administrator/create.do"><input
 		class="btn btn-default" type="button"

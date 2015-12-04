@@ -10,6 +10,7 @@ import org.springframework.util.Assert;
 
 import repositories.CommentRepository;
 import domain.Comment;
+import domain.Idea;
 
 @Transactional
 @Service
@@ -19,6 +20,12 @@ public class CommentService {
 
 	@Autowired
 	private CommentRepository commentRepository;
+	
+	@Autowired
+	private IdeaService ideaService;
+	
+	//@Autowired
+	//private UserService userService;
 
 	
 	// Constructors --------------------------
@@ -28,9 +35,12 @@ public class CommentService {
 
 	// Simple CRUD methods -----------------
 	
-	public Comment create(int idPlan) {
+	public Comment create(int idIdea) {
 		Comment comment = new Comment();
 		comment.setDate(new Date());
+		Idea idea = ideaService.findOne(idIdea);
+		comment.setIdea(idea);
+		//comment.setUser(userService.findByPrincipal());
 		return comment;
 	}
 
@@ -64,6 +74,11 @@ public class CommentService {
 		public Collection<Comment> findCommentByComment(int commentId) {
 
 			return commentRepository.findCommentByComment(commentId);
+		}
+		
+		public Collection<Comment> findCommentByIdea(int ideaId) {
+
+			return commentRepository.findCommentByIdea(ideaId);
 		}
 
 
