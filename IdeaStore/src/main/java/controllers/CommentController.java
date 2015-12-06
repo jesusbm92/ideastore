@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import services.CommentService;
+import services.UserService;
 import domain.Comment;
 import services.IdeaService;
 import domain.Idea;
@@ -27,6 +28,9 @@ public class CommentController extends AbstractController {
 	
 	@Autowired
 	private IdeaService ideaService;	
+	
+	@Autowired
+	private UserService userService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -81,8 +85,9 @@ public class CommentController extends AbstractController {
 	public ModelAndView save(@Valid Comment comment, BindingResult binding,
 			RedirectAttributes redirect) {
 		ModelAndView result;
-		commentService.save(comment);
-		result = new ModelAndView("redirect:/plan/customer/list.do");
+		commentService.save(comment); 
+		//result = new ModelAndView("redirect:/plan/customer/list.do");
+		result = new ModelAndView("redirect:/comment/list.do?ideaId="+comment.getIdea().getId());
 		return result;
 	}
 
@@ -107,6 +112,7 @@ public class CommentController extends AbstractController {
 		result = new ModelAndView("comment/edit");
 		result.addObject("comment", comment);
 		result.addObject("message", message);
+		result.addObject("idea", comment.getIdea());
 
 		return result;
 	}

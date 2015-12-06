@@ -31,10 +31,10 @@
 		<display:column property="description" titleKey="idea.description"
 			sortable="true" />
 		<display:column>
-			<a href="idea/view.do?ideaId=${row.id}"><input
+			<a href="idea/details.do?ideaId=${row.id}"><input
 				class="btn btn-default" type="button"
 				value="<spring:message code="idea.view"/>"
-				onclick="self.location.href = idea/view.do?ideaId=${row.id}" /></a>
+				onclick="self.location.href = idea/details.do?ideaId=${row.id}" /></a>
 		</display:column>
 		<display:column>
 			<a href="idea/edit.do?ideaId=${row.id}"><input

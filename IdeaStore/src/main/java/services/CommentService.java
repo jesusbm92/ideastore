@@ -24,8 +24,8 @@ public class CommentService {
 	@Autowired
 	private IdeaService ideaService;
 	
-	//@Autowired
-	//private UserService userService;
+	@Autowired
+	private UserService userService;
 
 	
 	// Constructors --------------------------
@@ -40,7 +40,7 @@ public class CommentService {
 		comment.setDate(new Date());
 		Idea idea = ideaService.findOne(idIdea);
 		comment.setIdea(idea);
-		//comment.setUser(userService.findByPrincipal());
+		/*comment.setUser(userService.findActorByUsername());*/
 		return comment;
 	}
 

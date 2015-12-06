@@ -46,6 +46,17 @@ public class IdeaController extends AbstractController{
 			return result;
 		}
 		
+		@RequestMapping("/details")
+		public ModelAndView details(@RequestParam int ideaId) {
+			ModelAndView result;
+			String uri = "idea/details";
+			String requestURI = "idea/details.do";
+			Idea idea = ideaService.findOne(ideaId);
+			result = createListModelAndView(requestURI, idea, uri);
+
+			return result;
+		}
+		
 		
 		protected ModelAndView createListModelAndView(String requestURI,
 				Collection<Idea> ideas, String uri) {
@@ -133,6 +144,17 @@ public class IdeaController extends AbstractController{
 			result.addObject("idea", ideas);
 			result.addObject("requestURI", requestURI);
 			
+			return result;
+		}
+		
+		protected ModelAndView createListModelAndView(String requestURI, Idea idea,
+				String uri) {
+			ModelAndView result;
+
+			result = new ModelAndView(uri);
+			result.addObject("idea", idea);
+			result.addObject("requestURI", requestURI);
+
 			return result;
 		}
 		

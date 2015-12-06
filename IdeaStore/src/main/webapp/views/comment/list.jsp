@@ -19,13 +19,19 @@
 			
 		<display:column property="user.name" titleKey="comment.user"
 			sortable="true" />
-		
+		<display:column property="date" titleKey="comment.date"
+			sortable="true" />
 	</display:table>
 	
 	<a href="comment/create.do?ideaId=${idea.id}"><input type="button"
 		class="btn btn-default"
 		value="<spring:message code="comment.create"/>"
 		onclick="self.location.href = comment/create.do" /></a>
+	
+	<a href="idea/list.do"><input type="button"
+		class="btn btn-default"
+		value="<spring:message code="comment.cancel"/>"
+		onclick="self.location.href = idea/list.do" /></a>
 <!-- 
 	<security:authorize access="hasRole('CUSTOMER')">
 		<a href="idea/customer/list.do"><input type="button"
