@@ -31,6 +31,12 @@
 		<display:column property="description" titleKey="idea.description"
 			sortable="true" />
 		<display:column>
+			<a href="idea/view.do?ideaId=${row.id}"><input
+				class="btn btn-default" type="button"
+				value="<spring:message code="idea.view"/>"
+				onclick="self.location.href = idea/view.do?ideaId=${row.id}" /></a>
+		</display:column>
+		<display:column>
 			<a href="idea/edit.do?ideaId=${row.id}"><input
 				class="btn btn-default" type="button"
 				value="<spring:message code="idea.edit"/>"
@@ -39,11 +45,17 @@
 		<display:column>
 			<a href="comment/list.do?ideaId=${row.id}"><input
 				class="btn btn-default" type="button"
-				value="<spring:message code="comment.create"/>"
+				value="<spring:message code="comment.list"/>"
 				onclick="self.location.href = comment/list.do?ideaId=${row.id}" /></a>
 		</display:column>
+		<display:column>
+			<a href="idea/delete.do?ideaId=${row.id}"><input
+				class="btn btn-default" type="button"
+				value="<spring:message code="idea.delete"/>"
+				onclick="self.location.href = idea/delete.do?ideaId=${row.id}" /></a>
+		</display:column>
 	</display:table>
-	<a href="day/administrator/create.do"><input
+	<a href="idea/create.do"><input
 		class="btn btn-default" type="button"
 		value="<spring:message code="idea.create"/>"
 		onclick="self.location.href = idea/create.do" /></a>
