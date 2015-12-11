@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import domain.Idea;
+import domain.Label;
 
 import services.IdeaService;
 
@@ -118,7 +119,19 @@ public class IdeaController extends AbstractController{
 			return result;
 		}
 		
-		
+		// Delete Idea
+		// --------------------------------------------------------------------
+		@RequestMapping(value = "/delete", method = RequestMethod.GET)
+		public ModelAndView delete(@RequestParam int ideaId) {
+			ModelAndView result;
+			
+			Idea idea= ideaService.findOne(ideaId);
+			ideaService.delete(idea);
+					
+			result = new ModelAndView("redirect:/idea/list.do");
+
+			return result;
+		}	
 		
 		// Business Logic
 		// --------------------------------------------------------------------

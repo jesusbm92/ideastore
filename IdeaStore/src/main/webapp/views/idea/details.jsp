@@ -27,16 +27,17 @@
 								onclick="self.location.href = idea/list.do" />
 							</a>
 
-							<a href="label/delete.do?labelId=${label.id}"><input type="button"
-								id="deletebtn" class="btn btn-primary btn-lg"
-								value="<spring:message code="idea.deletelabel"/>" 
-								onclick="self.location.href = label/delete.do?labelId=$(label.id}" />
-							</a>
+
 							
 							<a href="idea/edit.do?ideaId=${idea.id}"><input type="button"
 								class="btn btn-primary btn-lg"
 								value="<spring:message code="idea.editIdea"/>" 
 								onclick="self.location.href = idea/edit.do?ideaId=$(idea.id}" />
+							</a>
+							<a href="idea/delete.do?ideaId=${idea.id}"><input type="button"
+								class="btn btn-primary btn-lg"
+								value="<spring:message code="idea.delete"/>" 
+								onclick="self.location.href = idea/delete.do?ideaId=$(idea.id}" />
 							</a>
 							
 							<a href="label/create.do?ideaId=${idea.id}"><input type="button"
@@ -76,6 +77,11 @@
 									: ${label.description } -->
 									${label.description }
 								</p>
+								<a href="label/delete.do?labelId=${label.id}"><input type="button"
+								id="deletebtn" class="btn btn-primary btn-lg"
+								value="<spring:message code="idea.deletelabel"/>" 
+								onclick="self.location.href = label/delete.do?labelId=$(label.id}" />
+							</a>
 							</div>
 						</jstl:forEach>
 

@@ -9,8 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import domain.Idea;
+import domain.Comment;
+import domain.Label;
 
 import repositories.IdeaRepository;
+import repositories.LabelRepository;
+import repositories.CommentRepository;
 
 
 @Transactional
@@ -21,6 +25,11 @@ public class IdeaService {
 
 		@Autowired
 		private IdeaRepository ideaRepository;
+		@Autowired
+		private LabelRepository labelRepository;
+		@Autowired
+		private CommentRepository commentRepository;
+		
 
 		// Supporting services -----------------
 
@@ -84,7 +93,14 @@ public class IdeaService {
 		public void delete(Idea idea) {
 			Assert.notNull(idea);
 			// TODO Restricciones de Borrado
-
+			
+			for (Label label : idea.getLabels()) {
+			    labelRepository.delete(label);
+			}
+			
+			for (Comment comment : idea.getComments()) {
+			    commentRepository.delete(comment);
+			}
 			ideaRepository.delete(idea);
 		}
 
