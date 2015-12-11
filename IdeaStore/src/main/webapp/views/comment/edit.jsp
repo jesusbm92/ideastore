@@ -18,8 +18,8 @@
 	<form:hidden path="version" />
 	<form:hidden path="user" />
 	<form:hidden path="idea" />
-
-	<acme:textarea code="comment.content" path="content" />
+	<form:textarea path="content" code="comment.content" cols="100" rows="15"/>
+	<!--<acme:textarea code="comment.content" path="content" />-->
 	<br>
 
 	<input type="submit" name="save" class="btn btn-default"

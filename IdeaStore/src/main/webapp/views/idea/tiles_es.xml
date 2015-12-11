@@ -15,7 +15,7 @@
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
       
 <tiles-definitions>
-
+  
 	<definition name="idea/list" extends="master.page">	
 		<put-attribute name="title" value="Ideas" />
 		<put-attribute name="body" value="/views/idea/list.jsp" />
@@ -24,6 +24,16 @@
 	<definition name="idea/details" extends="master.page">
 		<put-attribute name="title" value="Detalles Idea" />
 		<put-attribute name="body" value="/views/idea/details.jsp" />
+	</definition>
+	
+	<definition name="idea/edit" extends="master.page">
+		<put-attribute name="title" value="Edit Idea" />
+		<put-attribute name="body" value="/views/idea/edit.jsp" />
+	</definition>
+	
+	<definition name="idea/create" extends="master.page">
+		<put-attribute name="title" value="New Idea" />
+		<put-attribute name="body" value="/views/idea/edit.jsp" />
 	</definition>
 	
 </tiles-definitions>

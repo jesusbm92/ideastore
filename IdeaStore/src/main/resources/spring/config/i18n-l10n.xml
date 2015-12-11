@@ -23,7 +23,7 @@
 		<value>/views/profile/messages</value>
 		<value>/views/idea/messages</value>
 		<value>/views/comment/messages</value>
-
+		<value>/views/label/messages</value>
 	</util:list>
 
 </beans>

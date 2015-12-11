@@ -19,41 +19,22 @@
 <%@taglib prefix="display" uri="http://displaytag.sf.net"%>
 <%@page import="domain.Idea"%>
 
-<h1 class="text-center">
+<!-- <h1 class="text-center">
 	<spring:message code="idea.ideas" />
 </h1>
+ -->
+
 
 <div class="container">
 	<display:table uid="ideaListTable" keepStatus="false" name="ideas"
 		pagesize="5" class="table table-hover" requestURI="${requestURI}"
 		id="row">
 		<display:column property="name" titleKey="idea.name" sortable="true" />
-		<display:column property="description" titleKey="idea.description"
-			sortable="true" />
-		<display:column>
-			<a href="idea/details.do?ideaId=${row.id}"><input
-				class="btn btn-default" type="button"
-				value="<spring:message code="idea.view"/>"
-				onclick="self.location.href = idea/details.do?ideaId=${row.id}" /></a>
+		
+		<display:column titleKey="idea.description">
+			<a href="idea/details.do?ideaId=${row.id}">${row.description}</a>
 		</display:column>
-		<display:column>
-			<a href="idea/edit.do?ideaId=${row.id}"><input
-				class="btn btn-default" type="button"
-				value="<spring:message code="idea.edit"/>"
-				onclick="self.location.href = idea/edit.do?ideaId=${row.id}" /></a>
-		</display:column>
-		<display:column>
-			<a href="comment/list.do?ideaId=${row.id}"><input
-				class="btn btn-default" type="button"
-				value="<spring:message code="comment.list"/>"
-				onclick="self.location.href = comment/list.do?ideaId=${row.id}" /></a>
-		</display:column>
-		<display:column>
-			<a href="idea/delete.do?ideaId=${row.id}"><input
-				class="btn btn-default" type="button"
-				value="<spring:message code="idea.delete"/>"
-				onclick="self.location.href = idea/delete.do?ideaId=${row.id}" /></a>
-		</display:column>
+
 	</display:table>
 	<a href="idea/create.do"><input
 		class="btn btn-default" type="button"

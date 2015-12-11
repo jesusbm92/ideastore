@@ -19,7 +19,7 @@
 
 .jMenu li {
 	display: table-cell;
-	background-color: #322f32;
+	background-color: #282c1d;
 	margin: 0px;
 }
 
@@ -27,7 +27,7 @@
 	padding: 10px;
 	display: block;
 	background-color: transparent;
-	color: white;
+	color: #fefdf8;
 	cursor: pointer;
 	font-size: 18px;
 	text-decoration: none;
@@ -50,14 +50,14 @@
 }
 
 .jMenu li ul li {
-	background-color: #322f32;
+	background-color: #282c1d;
 	display: block;
 	border-bottom: 1px solid #484548;
 	padding: 0;
 }
 
 .jMenu li ul li.arrow {
-	background-color: #322f32;
+	background-color: #282c1d;
 	background-image: url('../images/arrow_down.png');
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -68,7 +68,7 @@
 }
 
 .jMenu li ul li a {
-	font-size: 11px;
+	font-size: 14px;
 	text-transform: none;
 	padding: 7px;
 	display: block;
@@ -95,7 +95,7 @@
 
 /* More.. */
 
-.startSpace, .endSpace{width:35px;}
+.startSpace, .endSpace{width:20%;}
 
 
 

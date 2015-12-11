@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- 
- * PopulateDatabase.xml
- *
- * Copyright (C) 2014 Universidad de Sevilla
- * 
- * The use of this project is hereby constrained to the conditions of the 
- * TDG Licence, a copy of which you may download from 
- * http://www.tdg-seville.info/License.html
- -->
+<!-- * PopulateDatabase.xml * * Copyright (C) 2014 Universidad de Sevilla 
+	* * The use of this project is hereby constrained to the conditions of the 
+	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
-	
+
 	<!-- User accounts -->
 
 	<bean id="userAccount1" class="security.UserAccount">
@@ -56,67 +50,103 @@
 			</list>
 		</property>
 	</bean>
-	
-	<!-- Other domain beans come here -->	
-	
+
+	<!-- Other domain beans come here -->
+
 	<bean id="idea1" class="domain.Idea">
 		<property name="name" value="Idea 1" />
 		<property name="description" value="This is the idea 1" />
 		<property name="comments">
-			<list><ref bean="comment1" /></list>
+			<list>
+				<ref bean="comment1" />
+			</list>
+		</property>
+		<property name="labels">
+			<list></list>
 		</property>
 	</bean>
-	
+
 	<bean id="idea2" class="domain.Idea">
 		<property name="name" value="Idea 2" />
 		<property name="description" value="This is the idea 2" />
 		<property name="comments">
 			<list></list>
 		</property>
+		<property name="labels">
+			<list></list>
+		</property>
 	</bean>
-	
+
 	<bean id="idea3" class="domain.Idea">
 		<property name="name" value="Idea 3" />
 		<property name="description" value="This is the idea 3" />
 		<property name="comments">
 			<list></list>
 		</property>
+		<property name="labels">
+			<list></list>
+		</property>
 	</bean>
-	
+
 	<bean id="idea4" class="domain.Idea">
 		<property name="name" value="Idea 4" />
 		<property name="description" value="This is the idea 4" />
 		<property name="comments">
 			<list></list>
 		</property>
+		<property name="labels">
+			<list></list>
+		</property>
 	</bean>
-	
+
 	<bean id="idea5" class="domain.Idea">
 		<property name="name" value="Idea 5" />
 		<property name="description" value="This is the idea 5" />
 		<property name="comments">
 			<list></list>
 		</property>
+		<property name="labels">
+			<list></list>
+		</property>
 	</bean>
-	
+
 	<bean id="idea6" class="domain.Idea">
 		<property name="description" value="This is the idea6" />
 		<property name="name" value="Idea 6" />
 		<property name="comments">
 			<list></list>
 		</property>
+		<property name="labels">
+			<list></list>
+		</property>
 	</bean>
-	
+
 	<bean id="idea7" class="domain.Idea">
 		<property name="name" value="Idea 7" />
 		<property name="description" value="This is the idea 7" />
 		<property name="comments">
 			<list></list>
 		</property>
-	</bean> 
+		<property name="labels">
+			<list></list>
+		</property>
+	</bean>
 	<bean id="comment1" class="domain.Comment">
 		<property name="date" value="2014/03/28" />
 		<property name="content" value="Content Comment 1" />
+		<property name="idea" ref="idea1" />
+	</bean>
+	<bean id="comment2" class="domain.Comment">
+		<property name="date" value="2014/03/21" />
+		<property name="content" value="Content Comment 2" />
+		<property name="idea" ref="idea1" />
+	</bean>
+	<bean id="label1" class="domain.Label">
+		<property name="description" value="Label 1" />
+		<property name="idea" ref="idea1" />
+	</bean>
+	<bean id="label2" class="domain.Label">
+		<property name="description" value="Label 2" />
 		<property name="idea" ref="idea1" />
 	</bean>
 </beans>

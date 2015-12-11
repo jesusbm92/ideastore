@@ -17,8 +17,12 @@ public class Idea extends DomainEntity {
 	private String name;
 	private String description;
 	private Collection<Comment> comments;
+	private Collection<Label> labels;
+
 	
 	
+
+
 	public Idea() {
 		super();
 	}
@@ -49,7 +53,6 @@ public class Idea extends DomainEntity {
 	
 	
 	@Valid
-	@NotNull
 	@OneToMany(mappedBy = "idea")
 	public Collection<Comment> getComments() {
 		return comments;
@@ -59,4 +62,13 @@ public class Idea extends DomainEntity {
 		this.comments = comments;
 	}
 	
+	@Valid
+	@OneToMany(mappedBy = "idea")
+	public Collection<Label> getLabels() {
+		return labels;
+	}
+	 
+	public void setLabels(Collection<Label> labels) {
+		this.labels = labels;
+	}
 }

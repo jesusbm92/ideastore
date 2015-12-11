@@ -27,6 +27,8 @@
 			class="converters.CommentToStringConverter">
 </bean>
 		<bean class="converters.StringToCommentConverter"></bean>
+		<bean class="converters.LabelToStringConverter" />
+		<bean class="converters.StringToLabelConverter" />
 	</util:list>
 	
 </beans>

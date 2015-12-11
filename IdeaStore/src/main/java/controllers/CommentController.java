@@ -87,7 +87,8 @@ public class CommentController extends AbstractController {
 		ModelAndView result;
 		commentService.save(comment); 
 		//result = new ModelAndView("redirect:/plan/customer/list.do");
-		result = new ModelAndView("redirect:/comment/list.do?ideaId="+comment.getIdea().getId());
+		//result = new ModelAndView("redirect:/comment/list.do?ideaId="+comment.getIdea().getId());
+		result = new ModelAndView("redirect:/idea/details.do?ideaId="+comment.getIdea().getId());
 		return result;
 	}
 

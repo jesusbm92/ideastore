@@ -10,12 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import domain.Idea;
 
 import services.IdeaService;
 
-
+ 
 @Controller
 @RequestMapping("/idea")
 public class IdeaController extends AbstractController{
@@ -73,7 +74,7 @@ public class IdeaController extends AbstractController{
 		// --------------------------------------------------------------------
 		
 		@RequestMapping(value = "/create", method = RequestMethod.GET)
-		public ModelAndView createIdea(@RequestParam String name, @RequestParam String description){
+		public ModelAndView createIdea(){
 			ModelAndView result;
 			Idea idea = ideaService.create();		
 			result = createEditModelAndView(idea);
@@ -95,8 +96,8 @@ public class IdeaController extends AbstractController{
 			return result;
 		}
 		
-		@RequestMapping(value = "/edit", method = RequestMethod.POST)
-		public ModelAndView editIdea(@Valid Idea idea, BindingResult bindingResult){
+		@RequestMapping(value = "/edit", method = RequestMethod.POST, params = "save")
+		public ModelAndView editIdea(@Valid Idea idea, BindingResult bindingResult, RedirectAttributes redirect){
 			ModelAndView result;
 			
 			if(bindingResult.hasErrors()){
@@ -105,7 +106,8 @@ public class IdeaController extends AbstractController{
 			else{
 				try{
 					ideaService.save(idea);
-					result = new ModelAndView("");
+					//result = new ModelAndView("redirect:/idea/details.do?ideaId="+idea.getId());			
+					result = new ModelAndView("redirect:/idea/list.do");
 				}
 				catch(Throwable oops){
 					result = createEditModelAndView(idea, "idea.commit.error");
